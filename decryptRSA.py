@@ -60,7 +60,7 @@ def build_key(p,q,e):
     print("n is the multiplication of Q and P")
     print("n = %s \n" % n)
     print("Totient is generated which is (p-1) * (q-1) \n ")
-    print("f = %d \n" % (long(p-1) * (q-1)))
+    print("f = %d \n" % ((p-1) * (q-1)))
     print("e a commonly known prime\n ")
     print("e = %s \n" % e)
     print("d Mod Inverse of e and f\n ")
@@ -68,7 +68,7 @@ def build_key(p,q,e):
 
     # The ONLY reason this is here is to export key as PEM
 
-    key = RSA.construct((n, long(e), d, p , q))
+    key = RSA.construct((n, e, d, p, q))
     #print("u = %s \n" % key.u)
 
     private_key = key.exportKey("PEM")
